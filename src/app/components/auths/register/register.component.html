@@ -1,0 +1,30 @@
+<div class="card register-card">
+  <div class="card-body">
+    <form class="row">
+      <div class="form-group col-6">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="userModel.first_name" name="first_name">
+      </div>
+      <div class="form-group col-6">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="userModel.last_name" name="last_name">
+      </div>
+      <div class="form-group col-12">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="userModel.email" name="email">
+      </div>
+      <div class="form-group col-12">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" [(ngModel)]="userModel.username" name="username">
+      </div>
+      <div class="form-group col-12">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" [(ngModel)]="userModel.password" name="username">
+      </div>
+      <div class="form-group text-center col-12">
+        <button class="btn btn-primary btn-pad" (click)="register()">Register</button>
+        <button routerLink="/" class="btn btn-default btn-pad">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
