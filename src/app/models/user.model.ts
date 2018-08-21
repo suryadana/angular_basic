@@ -6,4 +6,5 @@ export class UserModel {
   username: string;
   password: string;
   password_confirm: string;
+  token: string;
 }

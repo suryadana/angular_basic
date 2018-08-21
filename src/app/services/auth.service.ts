@@ -18,17 +18,19 @@ export class AuthService extends BaseService {
     super();
   }
 
-  login(userModel: UserModel): Observable<UserModel | {}> {
+  login(userModel: UserModel): Observable<UserModel> {
     return this.http.post<UserModel>(`${this.urlBase}/auth/`, userModel).pipe(
-      tap( user => console.log(user) ),
-      catchError( (error) => this.handleError(error) )
+      map( user => {
+        return user;
+      })
     );
   }
 
-  register(userModel: UserModel): Observable<UserModel | {}> {
+  register(userModel: UserModel): Observable<UserModel> {
     return this.http.post<UserModel>(`${this.urlBase}/auth/register/`, userModel).pipe(
-      tap( user => console.log(user) ),
-      catchError( (error) => this.handleError(error) )
+      map( user => {
+        return user;
+      })
     );
   }
 
