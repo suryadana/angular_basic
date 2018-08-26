@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 import { Toast } from '../../utils/toast';
+import { AuthService } from '../auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class NoGuardService implements CanActivate {
+
   private toast: Toast;
   constructor(
     private authService: AuthService,
@@ -14,11 +15,10 @@ export class AuthGuardService implements CanActivate {
   ) {
     this.toast = new Toast;
   }
-
   canActivate(): boolean {
-    if (!this.authService.isAuthenticated()) {
-      this.toast.error('You must be login first.');
-      this.router.navigate(['/']);
+    if (this.authService.isAuthenticated()) {
+      this.toast.warning('You already login.');
+      this.router.navigate(['/profile']);
       return false;
     }
     return true;

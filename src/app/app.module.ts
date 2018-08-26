@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './root/app.component';
 import { FooterComponent } from './components/layouts/includes/footer/footer.component';
-import { NavigationComponent } from './components/layouts/includes/navigation/navigation.component';
 import { HeaderComponent } from './components/layouts/includes/header/header.component';
 import { AuthComponent } from './components/layouts/auth/auth.component';
 import { MainComponent } from './components/layouts/main/main.component';
@@ -25,7 +24,6 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     FooterComponent,
-    NavigationComponent,
     HeaderComponent,
     AuthComponent,
     MainComponent,
